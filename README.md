@@ -16,58 +16,62 @@
 ## データベース構造
 
 ### Users（ユーザー）
-- `id`: 主キー
-- `name`: ユーザーの名前
-- `email`: メールアドレス（ユニーク）
-- `password_digest`: パスワード（セキュアなハッシュ）
-- `created_at`: レコード作成日時
-- `updated_at`: レコード更新日時
+
+| colum              | Type     | Option      |
+| ------             | -------- | ----------- | 
+| email              | string   | null: false, unique: true |
+| encrypted_password | string   | null: false |
+| nickname           | string   | null: false |
+
 
 ### Patients（患者）
-- `id`: 主キー
-- `user_id`: 外部キー（Usersテーブルへの参照）
-- `name`: 患者の名前
-- `birthdate`: 生年月日
-- `gender`: 性別
-- `created_at`: レコード作成日時
-- `updated_at`: レコード更新日時
+
+| colum            | Type       | Option      |
+| ------           | --------   | ----------- | 
+| patient_name     | string     | null: false |
+| user             | references | null: false |
+| gender           | string     | null: false |
+| birthdate        | date       | null: false |
 
 ### Medications（薬剤）
-- `id`: 主キー
-- `name`: 薬の名前
-- `description`: 薬の説明
-- `dosage`: 用量
-- `side_effects`: 副作用
-- `created_at`: レコード作成日時
-- `updated_at`: レコード更新日時
+
+| colum            | Type       | Option      |
+| ------           | --------   | ----------- | 
+| medication_name  | string     | null: false |
+| description      | text       | null: false |  
+| dosage           | string     | null: false |
+| side_effect      | text       | null: false |
+
 
 ### Prescriptions（処方）
-- `id`: 主キー
-- `patient_id`: 外部キー（Patientsテーブルへの参照）
-- `medication_id`: 外部キー（Medicationsテーブルへの参照）
-- `prescribed_at`: 処方日時
-- `dosage`: 用量
-- `frequency`: 服用頻度
-- `duration`: 服用期間
-- `created_at`: レコード作成日時
-- `updated_at`: レコード更新日時
+
+| colum          | Type       | Option      |
+| ------         | --------   | ----------- | 
+| patient_id     | references | null: false |
+| medication_id  | references | null: false |
+| prescribed_at  | date       |
+| dosage         | integer    |
+| frequency      | integer    |
+| duration       | integer    |
+
 
 ### Doctors（医師）
-- `id`: 主キー
-- `name`: 医師の名前
-- `specialization`: 専門
-- `contact`: 連絡先情報
-- `created_at`: レコード作成日時
-- `updated_at`: レコード更新日時
+
+| colum          | Type       | Option      |
+| ------         | --------   | ----------- | 
+| doctor_name    | strings    | null: false |
+| specialization | integer    | null: false |   
+| clinic_name    | strings    | null: false |
+| phone_number   | string     | null: false |
 
 ### Appointments（診察予約）
-- `id`: 主キー
-- `patient_id`: 外部キー（Patientsテーブルへの参照）
-- `doctor_id`: 外部キー（Doctorsテーブルへの参照）
-- `scheduled_at`: 予約日時
-- `notes`: 診察メモ
-- `created_at`: レコード作成日時
-- `updated_at`: レコード更新日時
+
+| colum          | Type       | Option      |
+| ------         | --------   | ----------- | 
+| patient_id     | references | null: false |
+| doctor_id      | references | null: false |
+| scheduled_at   | date       | null: false |
+| notes          | text       |
 
 ### RefillRequests（リフィルリクエスト）
 - `id`: 主キー
