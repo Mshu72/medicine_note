@@ -1,5 +1,8 @@
 class Patient < ApplicationRecord
   belongs_to :user
+  has_many :medications
+  # has_many :prescriptions, through: :medications
+
   # has_many :appointments
   # has_many :doctors, through: :appointments
 

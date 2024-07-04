@@ -23,6 +23,8 @@
 | encrypted_password | string   | null: false |
 | nickname           | string   | null: false |
 
+has_many patients
+
 
 ### Patients（患者）
 
@@ -31,6 +33,10 @@
 | patient_name     | string     | null: false |
 | user             | references | null: false |
 | birthday         | date       | null: false |
+
+belongs_to user
+has_many medications 
+has_many prescriptions
 
 ### Medications（薬剤）
 

@@ -1,0 +1,11 @@
+<%= link_to '新しいお薬' , new_patient_medication_path %>
+
+処方済みのお薬  
+
+<% @medications.each do |medication| %>
+  <div>
+    
+    <%= link_to medication.medication_name, patient_medication_path(patient_id: medication.patient_id, id: medication.id) %>
+
+  </div>
+<% end %> 
