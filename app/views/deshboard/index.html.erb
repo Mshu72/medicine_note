@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+
+<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; border-radius: 8px; padding: 0; margin: 0; overflow: hidden;"
+      src="https://www.canva.com/design/DAFkT0rTSwo/r1q64nm2Bb3D_g_fppI4mQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  
+    <ul class='lists-right'>
+      
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname,  user_session_path, class: "user-nickname" %> </li> 
+        <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li> 
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+      
+    </ul>
+  </iframe>
+
+  
+    <%# 下部広告部分 %>
+<div class='ad-footer-contents'>
+  <p class='ad-footer-explain'>
+    だれでもかんたん、お薬手帳アプリ
+  </p>
+  <h2 class='ad-footer-title'>
+    今すぐ無料ダウンロード！
+  </h2>
+  <div class='store-btn'>
+    <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
+    <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+  </div>
+</div>
+<%# /下部広告部分 %>
+<%= render "shared/footer" %>

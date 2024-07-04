@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+<h1>ようこそ、<%= current_user.nickname %>さん</h1>
+
+<%= link_to '新規患者登録',  new_patient_path, class: "user-nickname" %>
+<div class="today-prescriptions">
+  <h2>今日の処方</h2>
+  <ul>
+    
+  </ul>
+</div>
+
+<div class="next-appointment">
+  <h2>次の診察予約</h2>
+  
+    <p>次の予約はありません。</p>
+</div>
+
+<div class="recent-refill-requests">
+  <h2>最近のリフィルリクエスト</h2>
+  <ul>
+  
+  </ul>
+</div>
+
+<nav class="menu">
+  <ul>
+    <%# <li><a href="<%= patients_path %>">患者管理</a></li> %>
+    <%# <li><a href="<%= medications_path %>">薬剤管理</a></li> %>
+    <%# <li><a href="<%= prescriptions_path %>">処方管理</a></li> %>
+    <%# <li><a href="<%= appointments_path %>">診察予約</a></li> %>
+    <%# <li><a href="<%= refill_requests_path %>">リフィルリクエスト</a></li> %>
+  </ul>
+</nav>
+
+<%= render "shared/footer" %>

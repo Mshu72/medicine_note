@@ -30,8 +30,7 @@
 | ------           | --------   | ----------- | 
 | patient_name     | string     | null: false |
 | user             | references | null: false |
-| gender           | string     | null: false |
-| birthdate        | date       | null: false |
+| birthday         | date       | null: false |
 
 ### Medications（薬剤）
 
