@@ -1,10 +1,10 @@
   <div class="items-sell-main">
     <h2 class="items-sell-title">お薬の情報を入力</h2>
-    <%= form_with model: @medication, url: patient_medications_path, local: true do |f| %>
+    <%= form_with model: @medication_prescription, url: patient_medications_path, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
-    <%# お薬画像 %>
+
     <div class="img-upload">
       <div class="weight-bold-text">
         お薬画像
@@ -16,8 +16,7 @@
         <%= f.file_field :image, name: 'image' %>
       </div>
     </div>
-    <%# /商品画像 %>
-    <%# 商品名と商品説明 %>
+
     <div class="new-items">
       <div class="weight-bold-text">
         お薬名
@@ -32,9 +31,7 @@
         <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"お薬の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
 
-    <%# 商品の詳細 %>
     <div class="items-detail">
       <div class="weight-bold-text">１回の用量</div>
       <div class="form">
@@ -49,7 +46,27 @@
         <%= f.text_area :side_effect, class:"items-text", id:"item-info", placeholder:"副作用の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /商品の詳細 %>
+
+    <div class="items-detail">
+      <div class="weight-bold-text">服用タイミング</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :prescribed_at, class:"items-text", id:"item-info", placeholder:"服用方法（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <div class="weight-bold-text">
+          服用回数
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :frequency, class:"items-text", id:"item-info", placeholder:"保存方法（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="weight-bold-text">
+          期間
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :duration, class:"items-text", id:"item-info", placeholder:"保存方法（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
