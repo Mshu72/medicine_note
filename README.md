@@ -1,87 +1,95 @@
-# お薬手帳アプリ
+## アプリ名
+ Medicine Note
 
-お薬手帳アプリは、ユーザーが薬の情報を管理し、処方情報や診察予約を追跡できるようにするためのアプリケーションです。
-このREADMEでは、アプリのセットアップ方法と使用方法について説明します。
+## アプリ概要
 
-## 機能
+Medicine Noteは、患者の薬の記録、医師情報、予約スケジュールを管理するためのものです。
+ユーザーは患者情報を登録し、処方された薬を記録し、予約を管理することができます。
 
-- ユーザー登録とログイン
-- 複数の患者の管理
-- 薬剤情報の管理
-- 処方情報の管理
-- 医師情報の管理
-- 診察予約の管理
-- リフィルリクエストの管理
+### 制作背景
+4月か娘が保育園に通い始め、病気にかかることが多くなりました。通院してお薬を頂くさい、必ず「お薬手帳はありますか」と尋ねられます。自分の薬ならあまり気にしていませんでしたが、大事な娘の情報なので確り記録に残しておこうという思いから手帳に記録するようになりました。ただ、記録を紙ベースではなくアプリで電磁的に記録できればと思い制作に至りました。
 
-## データベース構造
+## URL
 
-### Users（ユーザー）
+## テスト用アカウント
+- Basic認証パスワード  : 2222
+- Basic認証ID         : adomin 
+- メールアドレス       : gaga@jp.com 
+- パスワード           : As123df
 
-| colum              | Type     | Option      |
-| ------             | -------- | ----------- | 
-| email              | string   | null: false, unique: true |
-| encrypted_password | string   | null: false |
-| nickname           | string   | null: false |
+## 利用方法
 
-has_many patients
+- ユーザー登録後、患者情報を追加します。
+- 患者に対して薬を登録し、服用スケジュールを管理します。
+- 必要に応じて予約を作成し、医師情報を管理します。
 
+## 機能説明
 
-### Patients（患者）
+### ユーザー管理機能
+- ユーザーの登録、ログイン、ログアウト機能
 
-| colum            | Type       | Option      |
-| ------           | --------   | ----------- | 
-| patient_name     | string     | null: false |
-| user             | references | null: false |
-| birthday         | date       | null: false |
+### 患者管理機能
+- 複数の患者の情報を登録、編集、削除
+- 患者の詳細情報の表示
+- 各患者の薬のステータスや予約状況を表示
+- カレンダー表示で処方スケジュールを確認
 
-belongs_to user
-has_many medications 
-has_many prescriptions
+### 薬の記録機能
+- 薬の名前、用量、頻度、開始日、終了日などの情報を登録
+- 患者ごとの薬の一覧表示
 
-### Medications（薬剤）
+### 予約管理機能
+- 患者の予約を登録、編集、削除
+- 予約の一覧表示
 
-| colum            | Type       | Option      |
-| ------           | --------   | ----------- | 
-| medication_name  | string     | null: false |
-| description      | text       | null: false |  
-| dosage           | string     | null: false |
-| side_effect      | text       | null: false |
+### 医師情報管理機能
+- 医師・薬剤師の情報を登録、編集、削除
+- 患者ごとの担当医の表示
 
+## 追加実装予定
+現在、予約管理機能については未実装です。
+Googleマップを利用して近くの医療機関を探したり、掛り付け医の予約状況を登録できるようにしたいと思っています。
 
-### Prescriptions（処方）
+## データベース設計
 
-| colum          | Type       | Option      |
-| ------         | --------   | ----------- | 
-| patient_id     | references | null: false |
-| medication_id  | references | null: false |
-| prescribed_at  | date       |
-| dosage         | integer    |
-| frequency      | integer    |
-| duration       | integer    |
+## 画面遷移図
 
+## 開発環境
+- フレームワーク: Ruby on Rails 7.0.0
+- データベース: MySQL
 
-### Doctors（医師）
+## ローカル環境での動作方法
+1. セットアップ手順
+リポジトリをクローンします。
 
-| colum          | Type       | Option      |
-| ------         | --------   | ----------- | 
-| doctor_name    | strings    | null: false |
-| specialization | integer    | null: false |   
-| clinic_name    | strings    | null: false |
-| phone_number   | string     | null: false |
+```
+コードをコピーする
+git clone <リポジトリURL>
+cd <リポジトリ名>
+```
+2. 必要なgemをインストールします。
 
-### Appointments（診察予約）
+```
+コードをコピーする
+bundle install
+```
 
-| colum          | Type       | Option      |
-| ------         | --------   | ----------- | 
-| patient_id     | references | null: false |
-| doctor_id      | references | null: false |
-| scheduled_at   | date       | null: false |
-| notes          | text       |
+3. データベースを作成し、マイグレーションを実行します。
 
-### RefillRequests（リフィルリクエスト）
-- `id`: 主キー
-- `prescription_id`: 外部キー（Prescriptionsテーブルへの参照）
-- `requested_at`: リクエスト日時
-- `status`: ステータス（例：Pending、Approved、Denied）
-- `created_at`: レコード作成日時
-- `updated_at`: レコード更新日時
+```
+コードをコピーする
+rails db:create
+rails db:migrate
+```
+
+4. サーバーを起動します。
+```
+コードをコピーする
+rails s
+```
+5. ブラウザで http://localhost:3000 にアクセスします。
+
+## 工夫したポイント
+ 
+- ログイン状況に応じたトップ画面の変更\
+routes.rb内の記述でユーザーのログイン状況に応じてトップ画面を変更させるようにしました。未利用者への宣伝と利用者の情報を分けることができます。
