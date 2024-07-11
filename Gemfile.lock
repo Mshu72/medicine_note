@@ -251,7 +251,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bundler (~> 2.4.7)
   capybara
   debug
   devise
@@ -277,4 +276,4 @@ RUBY VERSION
    ruby 3.2.0p0
 
 BUNDLED WITH
-   2.4.7
+   2.4.1

@@ -80,4 +80,4 @@ gem 'image_processing', '~> 1.2'
 group :production do
   gem 'pg'
 end
-gem 'bundler', '~> 2.4.7'
+
