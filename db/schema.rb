@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_05_054031) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_04_064910) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,17 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_05_054031) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "medications", charset: "utf8", force: :cascade do |t|
-    t.string "medication_name", null: false
-    t.text "description", null: false
-    t.string "dosage", null: false
-    t.text "side_effect", null: false
-    t.bigint "patient_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_medications_on_patient_id"
-  end
-
   create_table "patients", charset: "utf8", force: :cascade do |t|
     t.string "patient_name", null: false
     t.bigint "user_id", null: false
@@ -58,18 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_05_054031) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_patients_on_user_id"
-  end
-
-  create_table "prescriptions", charset: "utf8", force: :cascade do |t|
-    t.bigint "medication_id", null: false
-    t.datetime "prescribed_at"
-    t.integer "frequency"
-    t.integer "duration"
-    t.bigint "patients_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["medication_id"], name: "index_prescriptions_on_medication_id"
-    t.index ["patients_id"], name: "index_prescriptions_on_patients_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -87,8 +64,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_05_054031) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "medications", "patients"
   add_foreign_key "patients", "users"
-  add_foreign_key "prescriptions", "medications"
-  add_foreign_key "prescriptions", "patients", column: "patients_id"
 end
