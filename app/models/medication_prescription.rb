@@ -29,7 +29,7 @@ class MedicationPrescriptionForm
     )
 
     Prescription.create(
-      medication_id: medication.id,
+      medication_id: medication_id,
       prescribed_at: prescribed_at,
       frequency: frequency,
       duration: duration,
