@@ -1,0 +1,89 @@
+/*
+ヘッダー
+*/
+
+.header{
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: aquamarine;
+  align-items: center;
+  margin-bottom: 48px;
+  padding: 20px 0;
+}
+
+.logo{
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  width: 500px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  padding: 0 20px;
+}
+
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
+
+/*
+フッター
+*/
+
+.footer {
+  width: 100vw;
+  padding: 5vh 0;
+  color: #FFF;
+  background-color: #272727;
+  text-align: center;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.medinote-details {
+  margin: 0 4vw;
+}
+
+.footer-content-head {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #FFF;
+  font-size: 12px;
+  line-height: 30px;
+}

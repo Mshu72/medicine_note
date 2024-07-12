@@ -1,37 +1,51 @@
-<%= render "shared/header" %>
+
 
 <%# メイン画像広告 %>
 
 
 <%# メリット %>
-<div class='merit-contents'>
-  <h2 class='merit-title'>
-    お薬手帳アプリのメリット
-  </h2>
-  <div class='merit-list>
-    <div class='merit-item'>
-      <img src='merit1.png' alt=''>
-      <p class='merit-text'>
-        いつでもどこでもお薬手帳が確認できる
-      </p>
-    </div>
-    <div class='merit-item'>
-      <img src='merit2.png' alt=''>
-      <p class='merit-text'>
-        お薬の飲み忘れを防ぐ
-      </p>
-    </div>
-    <div class='merit-item'>
-      <img src='merit3.png' alt=''>
-      <p class='merit-text'>
-        診察予約を確認できる
-      </p>  
-    </div>
+  <div class='select-merit-contents'>
+    <h2 class='title'>
+      medicine Note を利用する3つのメリット
+    </h2>
+    <ul class='merit-lists'>
+      <li class='list'>
+        <%# <%= image_tag "furima-intro01.png", class:"list-pict" %> 
+        <%# <span class='merit-list-number'>1</span> %>
+        <h3 class='merit-list-text'>
+          1. 管理が簡単
+        </h3>
+        <p class='merit-list-description'>
+          その日の処方役や診察予定を一覧で確認できます
+        </p>
+      </li>
+      <li class='list'>
+        <%# <%= image_tag "furima-intro02.png", class:"list-pict" %> 
+        <%# <span class='merit-list-number'>2</span> %>
+        <h3 class='merit-list-text'>
+          2. 家族で共有
+          
+        </h3>
+        <p class='merit-list-description'>
+          家族メンバーを登録すると情報を共有できます
+        </p>
+      </li>
+      <li class='list'>
+        <%# <%= image_tag "furima-intro03.png", class:"list-pict" %> 
+        <%# <span class='merit-list-number'>3</span> %>
+        <h3 class='merit-list-text'>
+          3. 診察予約ができる
+        </h3>
+        <p class='merit-list-description'>
+          かかりつけ医の登録や近くの病院を探すことができます
+        </p>
+      </li>
+    </ul>
   </div>
 
 <%# 使い方 %>
   
-    <%# 下部広告部分 %>
+    <%# 広告部分 %>
 <div class='ad-footer-contents'>
   <p class='ad-footer-explain'>
     だれでもかんたん、お薬手帳アプリ
@@ -45,4 +59,3 @@
   </div>
 </div>
 <%# /下部広告部分 %>
-<%= render "shared/footer" %>
