@@ -1,3 +1,51 @@
+.deashboard{
+  width: 100vw;
+}
+
+/*
+メイン画像広告
+*/
+.title-contents {
+  display: flex;
+  justify-content: center;
+  padding: 5vh;
+}
+.title-img{
+  width: 45vw;
+  height: 45vh;
+}
+
+.title-add{
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  color: black ;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.service-title {
+  font-size: 5vh;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+.store-btn {
+  display: flex;
+  margin-top: 24px;
+}
+
+.apple-btn {
+  margin-right: 1vw;
+  height: 9vh;
+}
+
+.google-btn {
+  height: 9vh;
+}
+
 /*
 メリット部分
 */
@@ -39,9 +87,13 @@
   position: relative;
 }
 
-.merit-pict {
+.list-pict {
   margin-bottom: 20px;
-  width: 100%;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .merit-list-number {
@@ -77,16 +129,12 @@
 */
 
 .ad-footer-contents {
-  width: 100vw;
-  background-image: url('furima-footer.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5vh 15vw;
+  padding: 5vh;
   color: black !important;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
@@ -101,16 +149,3 @@
   line-height: 30px;
 }
 
-.store-btn {
-  display: flex;
-  margin-top: 24px;
-}
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
-}
-
-.google-btn {
-  height: 9vh;
-}

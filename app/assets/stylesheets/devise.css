@@ -1,0 +1,124 @@
+
+.devise-main{
+  display: flex;
+  justify-content: center;
+}
+/* フォーム全体のスタイル */
+.registration-main {
+  background-color: #dddddd;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-wrap {
+  width: 100%;
+}
+
+/* フォームヘッダーのスタイル */
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-header-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* フラッシュメッセージのスタイル */
+.login-flash-message {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #dc3545; /* アラートメッセージ用の赤色 */
+}
+
+.login-flash-message .notice {
+  color: #28a745; /* 通知メッセージ用の緑色 */
+}
+
+/* 各フォームグループのスタイル */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-text-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.form-text {
+  font-size: 14px;
+  color: #333333;
+}
+
+.indispensable {
+  font-size: 12px;
+  color: #dc3545;
+}
+
+/* 入力フィールドのスタイル */
+.input-default {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-default:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/*新規登録ボタン*/
+.register-btn {
+  text-align: center;
+}
+
+.register-red-btn {
+  background-color: #dc3545;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-red-btn:hover {
+  background-color: #c82333;
+}
+
+.register-info {
+  text-align: center;
+}
+
+/* ログインボタンのスタイル */
+.login-btn {
+  text-align: center;
+}
+
+.login-red-btn {
+  background-color: #dc3545;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-red-btn:hover {
+  background-color: #c82333;
+}

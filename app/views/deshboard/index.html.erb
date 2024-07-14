@@ -1,16 +1,35 @@
 
+<div class='deshboard'>
+  <%# メイン画像広告 %>
+  <div class='title-contents'>
+    <div calss='title-img'>
+      <%= image_tag "origin_image.jpg", class:"title-img" %>
+    </div>
+    <div class='title-add'>
+      <h2 class='service-title'>
+        お薬管理をデジタルで
+      </h2>
+      <p class='service-explain'>
+        Medicine Noteはだれでもかんたんにお薬を管理できる
+      </p>
+      <p class='service-explain'>
+        お薬手帳アプリです
+      </p>
+      <div class='store-btn'>
+        <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
+        <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+      </div>
+    </div>
+  </div>
 
-<%# メイン画像広告 %>
-
-
-<%# メリット %>
+  <%# メリット %>
   <div class='select-merit-contents'>
     <h2 class='title'>
-      medicine Note を利用する3つのメリット
+      Medicine Note を利用する3つのメリット
     </h2>
     <ul class='merit-lists'>
       <li class='list'>
-        <%# <%= image_tag "furima-intro01.png", class:"list-pict" %> 
+        <%= image_tag "medicine-app_hand.png", class:"list-pict" %>
         <%# <span class='merit-list-number'>1</span> %>
         <h3 class='merit-list-text'>
           1. 管理が簡単
@@ -20,7 +39,7 @@
         </p>
       </li>
       <li class='list'>
-        <%# <%= image_tag "furima-intro02.png", class:"list-pict" %> 
+        <%= image_tag "kazokudekyouyu.jpg", class:"list-pict" %>
         <%# <span class='merit-list-number'>2</span> %>
         <h3 class='merit-list-text'>
           2. 家族で共有
@@ -31,7 +50,7 @@
         </p>
       </li>
       <li class='list'>
-        <%# <%= image_tag "furima-intro03.png", class:"list-pict" %> 
+        <%= image_tag "sinsatuyoyaku1.jpg", class:"list-pict" %> 
         <%# <span class='merit-list-number'>3</span> %>
         <h3 class='merit-list-text'>
           3. 診察予約ができる
@@ -43,19 +62,19 @@
     </ul>
   </div>
 
-<%# 使い方 %>
   
-    <%# 広告部分 %>
-<div class='ad-footer-contents'>
-  <p class='ad-footer-explain'>
-    だれでもかんたん、お薬手帳アプリ
-  </p>
-  <h2 class='ad-footer-title'>
-    今すぐ無料ダウンロード！
-  </h2>
-  <div class='store-btn'>
-    <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
-    <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+      <%# 広告部分 %>
+  <div class='ad-footer-contents'>
+    <p class='ad-footer-explain'>
+      だれでもかんたん、お薬手帳アプリ
+    </p>
+    <h2 class='ad-footer-title'>
+      今すぐ無料ダウンロード！
+    </h2>
+    <div class='store-btn'>
+      <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
+      <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+    </div>
   </div>
+
 </div>
-<%# /下部広告部分 %>
