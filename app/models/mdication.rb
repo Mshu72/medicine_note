@@ -1,0 +1,2 @@
+class Mdication < ApplicationRecord
+end
