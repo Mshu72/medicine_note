@@ -1,78 +1,69 @@
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">お薬の情報を入力</h2>
-    <%= form_with model: @medication_prescription, url: patient_medications_path, local: true do |f| %>
-
-    <%= render 'shared/error_messages', model: f.object %>
 
 
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        お薬画像
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, name: 'image' %>
-      </div>
-    </div>
+<%= form_with model: @medication_prescription_form, url: patient_medications_path do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
 
-    <div class="new-items">
-      <div class="weight-bold-text">
-        お薬名
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :medication_name, class:"items-text", id:"item-name", placeholder: "お薬名（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          お薬の説明
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"お薬の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-      </div>
-    </div>
-
-    <div class="items-detail">
-      <div class="weight-bold-text">１回の用量</div>
-      <div class="form">
-        <div class="weight-bold-text">
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :dosage, class:"items-text", id:"item-info", placeholder:"１回の用量（必須 1,00文字まで）" ,rows:"7" ,maxlength:"1000" %>
-        <div class="weight-bold-text">
-          副作用の説明
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :side_effect, class:"items-text", id:"item-info", placeholder:"副作用の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-      </div>
-    </div>
-
-    <div class="items-detail">
-      <div class="weight-bold-text">服用タイミング</div>
-      <div class="form">
-        <div class="weight-bold-text">
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :prescribed_at, class:"items-text", id:"item-info", placeholder:"服用方法（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-        <div class="weight-bold-text">
-          服用回数
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :frequency, class:"items-text", id:"item-info", placeholder:"保存方法（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-      </div>
-      <div class="weight-bold-text">
-          期間
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :duration, class:"items-text", id:"item-info", placeholder:"保存方法（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
-      </div>
-
-
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "登録する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', patient_medications_path, class:"back-btn" %>
-    </div>
-    <%# /下部ボタン %>
+  <div>
+    <%= f.label :medicine_name, 'お薬名' %>
+    <%= f.text_field :medicine_name %>
   </div>
-  <% end %>
+
+  <div>
+    <%= f.label :description, '説明' %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :dosage, '一回あたりの量' %>
+    <%= f.text_field :dosage %>
+  </div>
+
+  <div>
+    <%= f.label :side_effect, '副作用' %>
+    <%= f.text_area :side_effect %>
+  </div>
+
+  <div>
+    <%= f.label :frequency, '飲むタイミング' %>
+    <%= f.text_field :frequency %>
+  </div>
+
+  <div>
+    <%= f.label :duration, '処方期間' %>
+    <%= f.text_field :duration %>
+  </div>
+
+  <div>
+    <%= f.label :doctor_name, '医者名' %>
+    <%= f.text_field :doctor_name %>
+  </div>
+
+  <div>
+    <%= f.label :clinic_name, '病院名' %>
+    <%= f.text_field :clinic_name %>
+  </div>
+
+  <div>
+    <%= f.label :phone_number, '電話番号' %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= f.label :pharmacist, '薬剤師名' %>
+    <%= f.text_field :pharmacist %>
+  </div>
+
+  <div>
+    <%= f.label :pharmacy_name, '薬局名' %>
+    <%= f.text_field :pharmacy_name %>
+  </div>
+
+  <div>
+    <%= f.label :phone_number, '電話番号' %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= f.submit "Save" %>
+  </div>
+<% end %>

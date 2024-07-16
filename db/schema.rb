@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_04_064910) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_16_130857) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,28 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_04_064910) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "doctors", charset: "utf8", force: :cascade do |t|
+    t.string "doctor_name"
+    t.string "specialization"
+    t.string "clinic_name"
+    t.string "phone_number"
+    t.bigint "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_doctors_on_patient_id"
+  end
+
+  create_table "medications", charset: "utf8", force: :cascade do |t|
+    t.string "medicine_name"
+    t.text "description"
+    t.string "dosage"
+    t.text "side_effect"
+    t.bigint "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_medications_on_patient_id"
+  end
+
   create_table "patients", charset: "utf8", force: :cascade do |t|
     t.string "patient_name", null: false
     t.bigint "user_id", null: false
@@ -47,6 +69,27 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_04_064910) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_patients_on_user_id"
+  end
+
+  create_table "pharmacies", charset: "utf8", force: :cascade do |t|
+    t.string "pharmacist"
+    t.string "pharmacy_name"
+    t.string "phone_number"
+    t.bigint "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_pharmacies_on_patient_id"
+  end
+
+  create_table "prescriptions", charset: "utf8", force: :cascade do |t|
+    t.string "frequency"
+    t.string "duration"
+    t.bigint "patient_id"
+    t.bigint "medication_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["medication_id"], name: "index_prescriptions_on_medication_id"
+    t.index ["patient_id"], name: "index_prescriptions_on_patient_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -64,5 +107,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_04_064910) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "doctors", "patients"
+  add_foreign_key "medications", "patients"
   add_foreign_key "patients", "users"
+  add_foreign_key "pharmacies", "patients"
+  add_foreign_key "prescriptions", "medications"
+  add_foreign_key "prescriptions", "patients"
 end

@@ -51,7 +51,7 @@ Medicine Noteは、患者の薬の記録、医師情報、予約スケジュー�
 Googleマップを利用して近くの医療機関を探したり、掛り付け医の予約状況を登録できるようにしたいと思っています。
 
 ## データベース設計
-<a href="https://gyazo.com/c44b7235b3a59c24e5ef7c4dcfdc0aed"><img src="https://i.gyazo.com/c44b7235b3a59c24e5ef7c4dcfdc0aed.png" alt="Image from Gyazo" width="756.8"/></a>
+<img src="app/assets/images/data_base.png" alt="DB" width="756.8"/>
 
 ## 画面遷移図
 

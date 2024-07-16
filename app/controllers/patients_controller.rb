@@ -21,6 +21,7 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
+    @medication_prescription_data = MedicationPrescriptionForm.find_by_patient(@patient.id)
   end
 
   def edit

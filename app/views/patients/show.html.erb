@@ -9,10 +9,45 @@
 
 <div class="today-prescriptions">
   <h2>今日の処方</h2>
-  <ul>
-    
-  </ul>
+  
+  
+  <% @medication_prescription_data[:medications].each do |medication| %>
+  <p>
+    <strong>薬名:</strong> <%= medication.medicine_name %><br>
+    <strong>説明:</strong> <%= medication.description %><br>
+    <strong>用量:</strong> <%= medication.dosage %><br>
+    <strong>副作用:</strong> <%= medication.side_effect %>
+  </p>
+<% end %>
+
+<h2>処方の情報</h2>
+<% @medication_prescription_data[:prescriptions].each do |prescription| %>
+  <p>
+    <strong>頻度:</strong> <%= prescription.frequency %><br>
+    <strong>期間:</strong> <%= prescription.duration %>
+  </p>
+<% end %>
+
+<h2>医者の情報</h2>
+<% @medication_prescription_data[:doctors].each do |doctor| %>
+  <p>
+    <strong>医者の名前:</strong> <%= doctor.doctor_name %><br>
+    <strong>クリニックの名前:</strong> <%= doctor.clinic_name %><br>
+    <strong>電話番号:</strong> <%= doctor.phone_number %>
+  </p>
+<% end %>
+
+<h2>薬局の情報</h2>
+<% @medication_prescription_data[:pharmacies].each do |pharmacy| %>
+  <p>
+    <strong>薬剤師:</strong> <%= pharmacy.pharmacist %><br>
+    <strong>薬局名:</strong> <%= pharmacy.pharmacy_name %><br>
+    <strong>電話番号:</strong> <%= pharmacy.phone_number %>
+  </p>
+<% end %>
 </div>
+
+<%= link_to 'お薬登録', new_patient_medication_path(@patient.id) %>
 
 <div class="next-appointment">
   <h2>次の診察予約</h2>
@@ -20,4 +55,3 @@
     <p>次の予約はありません。</p>
 </div>
 
-<%# <%= link_to 'お薬登録', new_patient_medication_path(patient.id) %> %>
