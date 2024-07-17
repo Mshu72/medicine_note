@@ -1,0 +1,12 @@
+.patient_main{
+  width: 100vw;
+  background-color: white;
+}
+
+.patient_head{
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}

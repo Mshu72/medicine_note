@@ -1,19 +1,22 @@
 
+<div class='patient_main'>
 
-<h1>ようこそ、<%= current_user.nickname %>さん</h1>
-
-<%= link_to '新規患者登録',  new_patient_path, class: "user-nickname" %>
-<% @patients.each do |patient| %>
-  <div class="patient">
-    <%= link_to patient.patient_name, patient_path(patient.id), class: "user-nickname"%>
+  <div class='patient_head'>
+    <h1>ようこそ、<%= current_user.nickname %>さん</h1>
   </div>
-<% end %>
 
-<nav class="menu">
-  <ul>
-    <li><a href="<%= patients_path %>">患者管理</a></li>
-    <%# <li><a href="<%= medications_path %>">薬剤管理</a></li> 
-    <%# <li><a href="<%= prescriptions_path %>">処方管理</a></li> 
-    <%# <li><a href="<%= appointments_path %>">診察予約</a></li> 
-  </ul>
-</nav>
+  <div class='patien_main'>
+    <div class='select_menu'>
+      <h1>利用者を選択してください<h1>
+      <%= link_to '新規利用者登録',  new_patient_path, class: 'patient_name' %>
+      <% @patients.each do |patient| %>
+        <div class="patient">
+          <%= link_to patient.patient_name, patient_path(patient.id), class: "user-nickname"%>
+        </div>
+      <% end %>
+    </div>
+    <div class='select_menu'>
+      <%= link_to '診察予約',   class: "user-nickname" %>
+    </div>
+  </div>
+</div>
