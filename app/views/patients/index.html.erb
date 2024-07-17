@@ -5,18 +5,20 @@
     <h1>ようこそ、<%= current_user.nickname %>さん</h1>
   </div>
 
-  <div class='patien_main'>
+  <div class='patien_main_contents'>
     <div class='select_menu'>
       <h1>利用者を選択してください<h1>
       <%= link_to '新規利用者登録',  new_patient_path, class: 'patient_name' %>
       <% @patients.each do |patient| %>
         <div class="patient">
-          <%= link_to patient.patient_name, patient_path(patient.id), class: "user-nickname"%>
+          <%= link_to patient.patient_name, patient_path(patient.id), class: "patient_name"%>
         </div>
       <% end %>
     </div>
     <div class='select_menu'>
-      <%= link_to '診察予約',   class: "user-nickname" %>
+      <div class='patient'>
+      <%= link_to '診察予約',   class: "patient_name" %>
+      </div>
     </div>
   </div>
 </div>

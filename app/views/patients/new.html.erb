@@ -1,19 +1,22 @@
-<%= form_with model: @patient, local: true do |f| %>
+<div class='patien_main'>
+  
+  <%= form_with model: @patient, local: true do |f| %>
 
-  <div class="field">
-    <%= f.label :patient_name, "名前" %>
-    <%= f.text_field :patient_name, class: "form-control" %>
-  </div>
+    <div class="field">
+      <%= f.label :patient_name, "名前" %>
+      <%= f.text_field :patient_name, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :birthdate, "誕生日" %>
-    <%= f.date_field :birthdate, class: "form-control" %>
-  </div>
+    <div class="field">
+      <%= f.label :birthdate, "誕生日" %>
+      <%= f.date_field :birthdate, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :gender, "性別" %>
-    <%= f.select :gender, ["男", "女"], class: "form-control" %>
-  </div>
+    <div class="field">
+      <%= f.label :gender, "性別" %>
+      <%= f.select :gender, ["男", "女"], class: "form-control" %>
+    </div>
 
-  <button type="submit" class="btn btn-primary">登録</button>
-<% end %>
+    <button type="submit" class="btn btn-primary">登録</button>
+  <% end %>
+</div>
