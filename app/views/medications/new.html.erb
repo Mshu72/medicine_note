@@ -4,68 +4,68 @@
     <%= form_with model: @medication_prescription_form, url: patient_medications_path do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
-      <div>
-        <%= f.label :medicine_name, 'お薬名' %>
-        <%= f.text_field :medicine_name %>
+      <div class='p-3'>
+        <%= f.label :medicine_name, 'お薬名', class: 'form-label'  %>
+        <%= f.text_field :medicine_name, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :description, '説明' %>
-        <%= f.text_area :description %>
+      <div class='p-3'>
+        <%= f.label :description, '説明', class: 'form-label' %>
+        <%= f.text_area :description, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :dosage, '一回あたりの量' %>
-        <%= f.text_field :dosage %>
+      <div class='p-3'>
+        <%= f.label :dosage, '一回あたりの量', class: 'form-label' %>
+        <%= f.text_field :dosage, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :side_effect, '副作用' %>
-        <%= f.text_area :side_effect %>
+      <div class='p-3'>
+        <%= f.label :side_effect, '副作用', class: 'form-label' %>
+        <%= f.text_area :side_effect, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :frequency, '飲むタイミング' %>
-        <%= f.text_field :frequency %>
+      <div class='p-3'>
+        <%= f.label :frequency, '飲むタイミング', class: 'form-label' %>
+        <%= f.text_field :frequency, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :duration, '処方期間' %>
-        <%= f.text_field :duration %>
+      <div class='p-3'>
+        <%= f.label :duration, '処方期間', class: 'form-label' %>
+        <%= f.text_field :duration, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :doctor_name, '医者名' %>
-        <%= f.text_field :doctor_name %>
+      <div class='p-3'>
+        <%= f.label :doctor_name, '医者名', class: 'form-label' %>
+        <%= f.text_field :doctor_name, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :clinic_name, '病院名' %>
-        <%= f.text_field :clinic_name %>
+      <div class='p-3'>
+        <%= f.label :clinic_name, '病院名', class: 'form-label' %>
+        <%= f.text_field :clinic_name, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :phone_number, '電話番号' %>
-        <%= f.text_field :phone_number %>
+      <div class='p-3'>
+        <%= f.label :phone_number, '電話番号', class: 'form-label' %>
+        <%= f.text_field :phone_number, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :pharmacist, '薬剤師名' %>
-        <%= f.text_field :pharmacist %>
+      <div class='p-3'>
+        <%= f.label :pharmacist, '薬剤師名', class: 'form-label' %>
+        <%= f.text_field :pharmacist, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :pharmacy_name, '薬局名' %>
-        <%= f.text_field :pharmacy_name %>
+      <div class='p-3'>
+        <%= f.label :pharmacy_name, '薬局名', class: 'form-label' %>
+        <%= f.text_field :pharmacy_name, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.label :phone_number, '電話番号' %>
-        <%= f.text_field :phone_number %>
+      <div class='p-3'>
+        <%= f.label :phone_number, '電話番号', class: 'form-label' %>
+        <%= f.text_field :phone_number, class:"form-control" %>
       </div>
 
-      <div>
-        <%= f.submit "Save" %>
+      <div class='p-3 d-grid gap-2 col-6 mx-auto'>
+        <%= f.submit "記録する" %>
       </div>
     <% end %>
   </div>

@@ -1,12 +1,12 @@
 <div class='bg-body-secondary p-3'>
   <div class='bg-body container py-3'>
-    <%= @patient.patient_name %>さんのページ
     <div class="patient-info">
       <p>名前: <%= @patient.patient_name %></p>
       <p>誕生日: <%= @patient.birthdate %></p>
       <p>性別: <%= @patient.gender %></p>
     </div>
-
+  </div>
+  <div class='bg-body container '>
     <div class="today-prescriptions">
       <h2>今日の処方</h2>
       
@@ -18,10 +18,10 @@
         <strong>用量:</strong> <%= medication.dosage %><br>
         <strong>副作用:</strong> <%= medication.side_effect %>
       </p>
+      
     <% end %>
-
-    <h2>処方の情報</h2>
-    <% @medication_prescription_data[:prescriptions].each do |prescription| %>
+    <h2>処方の情報</h2> 
+    <% @medication_prescription_data[:prescriptions].each do |prescription| %> 
       <p>
         <strong>頻度:</strong> <%= prescription.frequency %><br>
         <strong>期間:</strong> <%= prescription.duration %>
@@ -45,7 +45,7 @@
         <strong>電話番号:</strong> <%= pharmacy.phone_number %>
       </p>
     <% end %>
-    </div>
+    </div> 
 
     <%= link_to 'お薬登録', new_patient_medication_path(@patient.id) %>
 
