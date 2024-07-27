@@ -1,69 +1,72 @@
+<div class='bg-body-secondary p-3'>
+  <div class='bg-body container py-3'>
 
+    <%= form_with model: @medication_prescription_form, url: patient_medications_path do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
 
-<%= form_with model: @medication_prescription_form, url: patient_medications_path do |f| %>
-<%= render 'shared/error_messages', model: f.object %>
+      <div>
+        <%= f.label :medicine_name, 'お薬名' %>
+        <%= f.text_field :medicine_name %>
+      </div>
 
-  <div>
-    <%= f.label :medicine_name, 'お薬名' %>
-    <%= f.text_field :medicine_name %>
+      <div>
+        <%= f.label :description, '説明' %>
+        <%= f.text_area :description %>
+      </div>
+
+      <div>
+        <%= f.label :dosage, '一回あたりの量' %>
+        <%= f.text_field :dosage %>
+      </div>
+
+      <div>
+        <%= f.label :side_effect, '副作用' %>
+        <%= f.text_area :side_effect %>
+      </div>
+
+      <div>
+        <%= f.label :frequency, '飲むタイミング' %>
+        <%= f.text_field :frequency %>
+      </div>
+
+      <div>
+        <%= f.label :duration, '処方期間' %>
+        <%= f.text_field :duration %>
+      </div>
+
+      <div>
+        <%= f.label :doctor_name, '医者名' %>
+        <%= f.text_field :doctor_name %>
+      </div>
+
+      <div>
+        <%= f.label :clinic_name, '病院名' %>
+        <%= f.text_field :clinic_name %>
+      </div>
+
+      <div>
+        <%= f.label :phone_number, '電話番号' %>
+        <%= f.text_field :phone_number %>
+      </div>
+
+      <div>
+        <%= f.label :pharmacist, '薬剤師名' %>
+        <%= f.text_field :pharmacist %>
+      </div>
+
+      <div>
+        <%= f.label :pharmacy_name, '薬局名' %>
+        <%= f.text_field :pharmacy_name %>
+      </div>
+
+      <div>
+        <%= f.label :phone_number, '電話番号' %>
+        <%= f.text_field :phone_number %>
+      </div>
+
+      <div>
+        <%= f.submit "Save" %>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-    <%= f.label :description, '説明' %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div>
-    <%= f.label :dosage, '一回あたりの量' %>
-    <%= f.text_field :dosage %>
-  </div>
-
-  <div>
-    <%= f.label :side_effect, '副作用' %>
-    <%= f.text_area :side_effect %>
-  </div>
-
-  <div>
-    <%= f.label :frequency, '飲むタイミング' %>
-    <%= f.text_field :frequency %>
-  </div>
-
-  <div>
-    <%= f.label :duration, '処方期間' %>
-    <%= f.text_field :duration %>
-  </div>
-
-  <div>
-    <%= f.label :doctor_name, '医者名' %>
-    <%= f.text_field :doctor_name %>
-  </div>
-
-  <div>
-    <%= f.label :clinic_name, '病院名' %>
-    <%= f.text_field :clinic_name %>
-  </div>
-
-  <div>
-    <%= f.label :phone_number, '電話番号' %>
-    <%= f.text_field :phone_number %>
-  </div>
-
-  <div>
-    <%= f.label :pharmacist, '薬剤師名' %>
-    <%= f.text_field :pharmacist %>
-  </div>
-
-  <div>
-    <%= f.label :pharmacy_name, '薬局名' %>
-    <%= f.text_field :pharmacy_name %>
-  </div>
-
-  <div>
-    <%= f.label :phone_number, '電話番号' %>
-    <%= f.text_field :phone_number %>
-  </div>
-
-  <div>
-    <%= f.submit "Save" %>
-  </div>
-<% end %>
+</div>

@@ -1,79 +1,77 @@
 
-<div class='deshboard'>
+<div class='bg-body-secondary'>
   <%# メイン画像広告 %>
-  <div class='title-contents'>
-    <div calss='title-img'>
-      <%= image_tag "origin_image.jpg", class:"title-img" %>
+  <div class='container-fluid d-flex py-5 '>
+    <div calss='containe col-6'>
+      <%= image_tag "origin_image.jpg", class: "img-thumbnail sm p-0" %>
     </div>
-    <div class='title-add'>
-      <h2 class='service-title'>
+    <div class='col-6'>
+      <h2 class='text-start fs-1 p-5 ' >
         お薬管理をデジタルで
       </h2>
-      <p class='service-explain'>
-        Medicine Noteはだれでもかんたんにお薬を管理できる
+      <p class='text-start fs-4 p-5 '>
+        Medicine Noteなら</br>
+        誰でも簡単にお薬をデジタル管理できる
       </p>
-      <p class='service-explain'>
+      <p class='text-start fs-4 p-5 '>
         お薬手帳アプリです
       </p>
-      <div class='store-btn'>
-        <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
-        <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+      <div class='d-flex bg-body-secondary '>
+        <div class='btn col-5'>
+          <a><%= link_to 'ログイン', new_user_session_path, class: "list-group-item list-group-item-action list-group-item-primary fs-3" %></a>
+        </div>
+        <div class='btn col-5'>
+          <a><%= link_to '新規登録', new_user_registration_path, class: "list-group-item list-group-item-action list-group-item-primary fs-3" %></a>
+        </div>
       </div>
     </div>
   </div>
 
   <%# メリット %>
   <div class='select-merit-contents'>
-    <h2 class='title'>
+    <h2 class='text-center pb-5'>
       Medicine Note を利用する3つのメリット
     </h2>
-    <ul class='merit-lists'>
-      <li class='list'>
-        <%= image_tag "medicine-app_hand.png", class:"list-pict" %>
-        <%# <span class='merit-list-number'>1</span> %>
-        <h3 class='merit-list-text'>
-          1. 管理が簡単
-        </h3>
-        <p class='merit-list-description'>
-          その日の処方役や診察予定を一覧で確認できます
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "kazokudekyouyu.jpg", class:"list-pict" %>
-        <%# <span class='merit-list-number'>2</span> %>
-        <h3 class='merit-list-text'>
-          2. 家族で共有
-          
-        </h3>
-        <p class='merit-list-description'>
-          家族メンバーを登録すると情報を共有できます
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "sinsatuyoyaku1.jpg", class:"list-pict" %> 
-        <%# <span class='merit-list-number'>3</span> %>
-        <h3 class='merit-list-text'>
-          3. 診察予約ができる
-        </h3>
-        <p class='merit-list-description'>
-          かかりつけ医の登録や近くの病院を探すことができます
-        </p>
-      </li>
-    </ul>
+    <div class="d-flex justify-content-evenly">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "medicine-app_hand.png", class:"card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">管理が簡単</h5>
+          <p class="card-text">その日の処方役や診察予定を一覧で確認できます</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "kazokudekyouyu.jpg", class:"card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">家族で共有
+          </h5>
+          <p class="card-text">家族メンバーを登録すると情報を共有できます</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "sinsatuyoyaku1.jpg", class:"card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">診察予約ができる
+          </h5>
+          <p class="card-text">かかりつけ医の登録や近くの病院を探すことができます</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   
       <%# 広告部分 %>
-  <div class='ad-footer-contents'>
-    <p class='ad-footer-explain'>
+  <div class='container'>
+    <p class='text-center p-3'>
       だれでもかんたん、お薬手帳アプリ
     </p>
-    <h2 class='ad-footer-title'>
-      今すぐ無料ダウンロード！
-    </h2>
-    <div class='store-btn'>
-      <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
-      <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+      <div class='pb-5'>
+        <h2 class='text-center '>
+          今すぐ無料
+        <a><%= link_to '登録!', new_user_registration_path, class: "link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover fs-3" %></a>
+        </h2>
     </div>
   </div>
 

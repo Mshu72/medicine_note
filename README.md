@@ -55,7 +55,7 @@ Medicine Noteは、患者の薬の記録、医師情報、予約スケジュー�
 <img src="app/assets/images/data_base.png" alt="DB" width="756.8"/>
 
 ## 画面遷移図
-
+[![Image from Gyazo](https://i.gyazo.com/313ad99436deeea04004a69756c48a24.png)](https://gyazo.com/313ad99436deeea04004a69756c48a24)
 ## 開発環境
 - フレームワーク: Ruby on Rails 7.0.0
 - データベース: MySQL

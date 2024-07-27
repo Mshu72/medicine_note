@@ -1,20 +1,20 @@
 
-<header class='header'>
+<header class='d-flex bg-primary-subtle'>
   
-  <div class='logo'>
+  <div class='col-8 text-center'>
     <h2>Medication Note</h2>
   </div>
-  <div class='nuv-header'>
-    <ul class='header-right'>
+  <div class='col-4 text-end'>
+    <div class='list-group list-group-horizontal text-center p-1'>
       
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname,  user_session_path, class: "use-nickname" %> </li> 
-        <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %></li> 
+        <a><%= link_to current_user.nickname,  user_session_path, class: "list-group-item list-group-item-action list-group-item-primary" %> </a> 
+        <a><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "list-group-item list-group-item-action list-group-item-primary" %></a> 
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <a><%= link_to 'ログイン', new_user_session_path, class: "list-group-item list-group-item-action list-group-item-primary" %></a>
+        <a><%= link_to '新規登録', new_user_registration_path, class: "list-group-item list-group-item-action list-group-item-primary" %></a>
       <% end %>
       
-    </ul>
+    </div>
   </div>
 </header>
