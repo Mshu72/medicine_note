@@ -25,9 +25,17 @@
       </div>
       <%= f.password_field :password, class:"form-control", id:"password", placeholder:"" %>
     </div>
-    <div class='d-grid gap-2 col-6 mx-auto'>
-      <%= f.submit "ログイン" ,class:"login-red-btn" %>
+    <div class='d-grid gap-2 col-4 mx-auto'>
+      <%= f.submit "ログイン"  %>
+    </div>
+  
+  <% end %>
+    <div class='d-flex justify-content-center p-3'>
+      <div class='d-grid gap-2 '>
+        <%= button_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, data: { turbo: false } %>
+      </div>
+      <div class='d-grid gap-2 '>
+        <%= button_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, data: { turbo: false } %>
+      </div>
     </div>
   </div>
-  <% end %>
-
